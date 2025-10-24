@@ -1,0 +1,18 @@
+import TextExpander from "./TextExpander";
+export default function App(){
+
+    return <>
+    <TextExpander   btnColor='red' > 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat alias laudantium vel porro? Sit deleniti eius odit cumque natus. Voluptate officia eaque vel ipsum dolore nemo dignissimos veniam repudiandae nostrum quo molestias facilis ipsam, non delectus minus voluptas adipisci fugiat ducimus? Reprehenderit aliquam, natus inventore accusantium officia praesentium fugit quo. Recusandae blanditiis commodi dolorem. Iste odio pariatur reprehenderit dolore saepe voluptate sapiente quis, molestiae eum perspiciatis ratione, itaque sunt amet nemo hic ea maxime ab voluptatem! Culpa at iure provident laborum maiores atque, autem laboriosam dicta quasi molestiae ad! Quos illo voluptatem aspernatur, reiciendis explicabo corporis mollitia molestias ab labore!
+    </TextExpander>
+
+
+    <TextExpander   btnColor='blue' collapsedText="Show Text" expandedText="collapsed Text" collapsedWords={15}> 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat alias laudantium vel porro? Sit deleniti eius odit cumque natus. Voluptate officia eaque vel ipsum dolore nemo dignissimos veniam repudiandae nostrum quo molestias facilis ipsam, non delectus minus voluptas adipisci fugiat ducimus? Reprehenderit aliquam, natus inventore accusantium officia praesentium fugit quo. Recusandae blanditiis commodi dolorem. Iste odio pariatur reprehenderit dolore saepe voluptate sapiente quis, molestiae eum perspiciatis ratione, itaque sunt amet nemo hic ea maxime ab voluptatem! Culpa at iure provident laborum maiores atque, autem laboriosam dicta quasi molestiae ad! Quos illo voluptatem aspernatur, reiciendis explicabo corporis mollitia molestias ab labore!
+    </TextExpander>
+
+    <TextExpander   btnColor='blue' collapsedText="Show Text" expandedText="collapsed Text" collapsedWords={15} isExpanded={true} className="box"> 
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat alias laudantium vel porro? Sit deleniti eius odit cumque natus. Voluptate officia eaque vel ipsum dolore nemo dignissimos veniam repudiandae nostrum quo molestias facilis ipsam, non delectus minus voluptas adipisci fugiat ducimus? Reprehenderit aliquam, natus inventore accusantium officia praesentium fugit quo. Recusandae blanditiis commodi dolorem. Iste odio pariatur reprehenderit dolore saepe voluptate sapiente quis, molestiae eum perspiciatis ratione, itaque sunt amet nemo hic ea maxime ab voluptatem! Culpa at iure provident laborum maiores atque, autem laboriosam dicta quasi molestiae ad! Quos illo voluptatem aspernatur, reiciendis explicabo corporis mollitia molestias ab labore!
+    </TextExpander>
+    </>
+}

@@ -1,0 +1,33 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+th, td {
+  padding: 12px 15px;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+th {
+  background: #f3f4f6;
+  font-weight: bold;
+}
+tr:hover {
+  background: #f9fafc;
+}
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.btn-modify {
+  background: #2563eb;
+  color: #fff;
+}
+.btn-delete {
+  background: #dc2626;
+  color: #fff;
+}

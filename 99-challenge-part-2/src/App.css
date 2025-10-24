@@ -1,0 +1,19 @@
+ul {
+  list-style: none;
+}
+
+li {
+  border:2px solid #333333;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+}
+
+.selectd-post,
+.post-list {
+  width: 50%;
+}
