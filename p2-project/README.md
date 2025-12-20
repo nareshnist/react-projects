@@ -1,20 +1,54 @@
-###### STEPS PROJECT 
 
-1. Handling Events in the react.
-  1. need to write as  Camel-case ex : `onClick, onMouseOver`
-  2. never call the function ex handlePrevious() , just declare it otherwise js would execute immediatly.
-  3. All functiona name start with `handle` in `React` ,
-2. What is `state` in React
-    1. define
-    2. use 
-    3. update it .
-    4. only call in top level components like inside components
-        1. never call in side the `functions and if else and loops`.
-    5. don't change manually
-    6. `State is immutable in react`.
-    7. Updating state based on current state.
-      1. shoud't do directly changing step + 1
-      2. call function (s) => s + 1
-    
+# Steps Project – React Basics
+
+This project covers the fundamentals of **event handling** and **state management** in React.
+
+---
+
+## 1. Handling Events in React
+
+- Event names must be written in **camelCase**
+  - Examples: `onClick`, `onMouseOver`
+- Do **not call the function** while assigning it to an event
+  - ❌ `onClick={handlePrevious()}`
+  - ✅ `onClick={handlePrevious}`
+- Event handler function names should start with `handle`
+  - Examples: `handleNext`, `handlePrevious`, `handleClick`
+
+---
+
+## 2. State in React
+
+- State is defined inside a component
+- State is used in JSX
+- State should be updated whenever data changes
+- Declare state only at the **top level** of a component
+  - ❌ Not inside functions, loops, or `if/else`
+- Never modify state directly
+- **State is immutable in React**
+
+---
+
+## 3. Updating State
+
+### ❌ Wrong js
+step = step + 1;
+
+### ✅ Correct
+
+  `setStep(step + 1);`
+
+### ✅ Best Practice (Based on Previous State)
+  `setStep((s) => s + 1);`
+
+
+# Key Takeaways
+  - cUse camelCase for React events
+
+  - Pass function references, not function calls
+
+  - Declare state only at the top level of components
+
+  - Always update state using the setter function
 
     
