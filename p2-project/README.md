@@ -52,3 +52,4 @@ step = step + 1;
   - Always update state using the setter function
 
     
+### check the example for Children props
