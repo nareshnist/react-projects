@@ -72,3 +72,6 @@ setItems((items) => [...items, newItem]);
 ## Remove Item
 
 setItems((items) => items.filter((item) => item.id !== id));
+
+
+###### Exercise

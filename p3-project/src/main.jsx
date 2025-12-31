@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx';
 
 import Accordian from './exercise/Accordian.jsx';
-
+import Calculator from './exercise/Calculator.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -16,6 +16,7 @@ createRoot(document.getElementById('root')).render(
     <Counter /> */}
 
     <Accordian />
+    <Calculator />
 
   </StrictMode>,
 )
