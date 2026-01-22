@@ -1,69 +1,95 @@
-import { useEffect, useReducer, useState } from "react";
+import { useReducer, useState } from "react";
 
+
+// useReducer more comple state management 
+// centeralize staet update logic
+
+  const initialState = {count:0,step:1}
 
 function reducer(state,action){
-  console.log(state,action);
+  console.log("current state value",state)
+  console.log("action  state value",action);
+
+  // if(action.type === 'inc'){
+  //   return state + 1
+  // }
+  //  if(action.type === 'dec'){
+  //   return state - 1
+  // }
+
+  // if(action.type === 'setCount'){
+  //   return action.payload;
+  // }
+
 
   switch(action.type){
-    case "inc" :
-      return  {
-        ...state,
-        count: state.count + state.step
+    case 'inc':
+        return {
+          ...state,
+          count: state.count + state.step
         }
-    case "dec" :
-      return  {
-        ...state,
-        count: state.count  -  state.step
+    case 'dec':
+      return {
+          ...state,
+          count: state.count - state.step
         }
-    case "setCount" :
-      return  {
-        ...state,
-        count : action.payload
+    case 'setCount':
+      return {
+          ...state,
+          count: action.payload
         }
-    case "setStep" :
-      return  {
-        ...state,
-        step : action.payload
+    case 'setStep' :
+      return {
+          ...state,
+          step: action.payload
         }
-    case "reset" :
-      return  {
-       count:0,
-        step : 1
-        }
+    case 'reSet' :
+      return initialState;
     default :
-        throw new Error("Unknown action")
+        throw new Error('Unknow action')
+  }
+
+
+  // return the next state
+  return {
+    count:0,step:1
   }
 }
 
 function DateCounter() {
 
-  const initialState = { count : 0, step :1}
-  const [state ,dispatch] = useReducer(reducer,initialState);
-  const {count , step } = state;
 
+  const [state, dispatch] = useReducer(reducer,initialState) // function  and initial Values
+
+  const {
+    count , step
+  } = state;
 
   // This mutates the date object.
   const date = new Date("june 21 2027");
   date.setDate(date.getDate() + count);
 
   const dec = function () {
-    dispatch({type:'dec'})
+    dispatch({type:'dec'});
   };
 
   const inc = function () {
-    dispatch({type:'inc'})
+     dispatch({type:'inc'});
+
   };
 
   const defineCount = function (e) {
-    dispatch({type:"setCount", payload:Number(e.target.value)});
+    dispatch({type:'setCount',payload:Number(e.target.value)});
   };
 
   const defineStep = function (e) {
-    dispatch({type:"setStep", payload:Number(e.target.value)});
+      dispatch({type:'setStep',payload:Number(e.target.value)});
   };
 
   const reset = function () {
-    dispatch({type:"reset"})
+    dispatch({type:'reSet'})
+    // setCount(0);
+    // setStep(1);
   };
 
   return (
@@ -90,94 +116,7 @@ function DateCounter() {
       <div>
         <button onClick={reset}>Reset</button>
       </div>
-
-
-
-      <ApiTesting />
     </div>
   );
 }
 export default DateCounter;
-
-
-
-const intialState = {
-  loading:false,
-  data:[],
-  error:false
-}
-
-const actionTypes = {
-  init:'FETCH_INIT',
-  success:'FETCH_SUCCESS',
-  error:'FETCH_ERROR'
-}
-
-function apiStatus(state,action){
-  switch(action.type){
-    case actionTypes.init:
-        return { ...state, loading:true}
-    case actionTypes.success:
-      return { ...state, loading:false, data:action.payload}  
-    case actionTypes.error:
-      return { ...state, loading:false, data:null ,error:true} 
-    
-    default :
-      throw new Error("On default state");
-  }
-}
-
-function ApiTesting(){
-
-  
-  const [apiData ,dispatch] = useReducer(apiStatus, intialState);
-
-  const {
-    loading,
-    data,
-    error,
-  } = apiData;
-
-
-  useEffect(()=>{
-    
-    dispatch({ type: actionTypes.init }); // start loading
-
-      fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(response=>{
-        if(!response.ok){
-          throw new Error("an error occured");
-        }
-        return response.json()
-      }
-      )
-      .then(data => dispatch({type:actionTypes.success,payload:data}))
-      .catch(error=>{
-        dispatch({type:actionTypes.error})
-      })
-  },[]);
-
-
-
-  return (
-    <>
-          {
-            loading && <h6> hey data retrival may take some time</h6>
-          }
-
-          {
-            error && <h6> hey while fetching data serve has some issue please try after sometime</h6>
-          }
-
-          {
-            data?.length > 0 && <ul>
-              {
-                data?.map(data => <h1 key={data.title}>{data.title}</h1>)
-              }
-              
-            </ul>
-          }
-    </>
-  )
-
-}
