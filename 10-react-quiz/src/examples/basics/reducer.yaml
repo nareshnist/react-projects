@@ -1,0 +1,60 @@
+             ┌─────────────┐
+             │  Basic      │
+             │ Counter     │
+             └─────┬───────┘
+                   │
+                   ▼
+       State: { count: 0 }
+       Actions: INCREMENT, DECREMENT, RESET
+       Reducer Logic:
+       - Increment → count + 1
+       - Decrement → count - 1
+       - Reset → count = 0
+       Features:
+       ✔ Simple state
+       ✔ Single value update
+       ✔ Beginner level
+                   │
+                   ▼
+             ┌─────────────┐
+             │ Intermediate│
+             │ Form        │
+             └─────┬───────┘
+                   │
+                   ▼
+       State: { userName: "", email: "" }
+       Actions: SET_USERNAME, SET_EMAIL, RESET
+       Reducer Logic:
+       - Update input field based on action.payload
+       - Reset → clear all fields
+       Features:
+       ✔ Multiple related state values
+       ✔ Centralized logic
+       ✔ Intermediate complexity
+                   │
+                   ▼
+             ┌─────────────┐
+             │  Advanced   │
+             │ ShoppingCart│
+             └─────┬───────┘
+                   │
+                   ▼
+       State:
+       {
+         products: [...],
+         cartItems: [...],
+         totalCartItems: 0
+       }
+       Actions:
+       - ADD_TO_CART → add product or increase quantity
+       - REMOVE_FROM_CART → remove product or decrease quantity
+       - CLEAR_CART → reset cart
+       Reducer Logic:
+       - Check existing items
+       - Update dependent states (totalCartItems)
+       - Maintain immutability
+       Features:
+       ✔ Complex state objects
+       ✔ Dependent updates
+       ✔ Centralized, scalable logic
+       ✔ Suitable for real-world apps

@@ -12,6 +12,9 @@ import Progress from './Progress';
 import FinishScreen from './FinishScreen';
 import Footer from './Footer';
 import Timer from './Timer';
+import Counter from './examples/basics/Counter';
+import SignUp from './examples/basics/SignUp';
+import ShoppingCart from './examples/basics/ShoppingCart';
 
 const initialState = {
   questions:[],
@@ -146,6 +149,18 @@ function App() {
                 }
 
             </MainComponent>
+
+
+            {/* Use Redcuer Examples */}
+
+            {/* <Counter /> */}
+
+            {/* Form Example */}
+
+            {/* <SignUp /> */}
+
+            {/* Shopping Cart */}
+            <ShoppingCart />
        </div> 
     </>
   )
